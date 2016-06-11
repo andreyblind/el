@@ -1,5 +1,6 @@
 import urllib.request
 from bs4 import BeautifulSoup
+import re
 
 base_url = 'http://e-liquid-recipes.com/?q=&exclsingle=0&flavorIds=&sort=recipe.created&direction=desc&page='
 recipe_urls = []
@@ -22,7 +23,8 @@ def add_links_to_list(html):
     table = soup.find('table', class_="recipelist")
 
     for a in table.find_all('a', href=True)[4:]:
-        recipe_urls.append(a['href'])
+        if r'http://e-liquid-recipes.com/recipe/' in a['href']:
+            recipe_urls.append(a['href'])
 
 def get_links():
     i = 1
@@ -31,8 +33,8 @@ def get_links():
         i +=1
 
 def main():
-
     get_links()
+    print (len(recipe_urls))
 
 
 if __name__ == '__main__':
