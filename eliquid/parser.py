@@ -32,8 +32,9 @@ def get_links():
         i +=1
 
 def main():
-    get_links()
-    print (len(recipe_urls))
+    #get_links()
+    #print (len(recipe_urls))
+    pass
 
 
 if __name__ == '__main__':
