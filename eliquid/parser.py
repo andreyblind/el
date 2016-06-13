@@ -1,6 +1,5 @@
 import urllib.request
 from bs4 import BeautifulSoup
-import re
 
 base_url = 'http://e-liquid-recipes.com/?q=&exclsingle=0&flavorIds=&sort=recipe.created&direction=desc&page='
 recipe_urls = []
