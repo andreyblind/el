@@ -1,5 +1,6 @@
 import urllib.request
 from bs4 import BeautifulSoup
+from eliquid.models import recipes
 
 base_url = 'http://e-liquid-recipes.com/?q=&exclsingle=0&flavorIds=&sort=recipe.created&direction=desc&page='
 recipe_urls = []
@@ -23,7 +24,9 @@ def add_links_to_list(html):
 
     for a in table.find_all('a', href=True)[4:]:
         if r'http://e-liquid-recipes.com/recipe/' in a['href']:
-            recipe_urls.append(a['href'])
+            r = recipes(url = a['href'])
+            r.save()
+            #recipe_urls.append(a['href'])
 
 def get_links():
     i = 1
