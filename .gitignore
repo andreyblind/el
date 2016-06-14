@@ -1,1 +1,3 @@
 .idea
+parsers/migrations/__pycache__/
+eliquid/__pycache__/

@@ -1,5 +1,5 @@
 from django.db import models
 
-class recipes(models.Model):
-    url = models.CharField(max_length=100)
+class recipes_url(models.Model):
+    url = models.CharField(max_length=350)
 
